@@ -19,7 +19,7 @@ export class ResultComponent implements OnInit {
     this.hotelsService.hotelsSubject.subscribe(hotels => {
       this.hotels = hotels;
     });
-    this.hotelsService.getHotels();
+    this.hotelsService.getHotels(); // lanza el evento al que nos acabamos de suscribir
   }
 
 }
