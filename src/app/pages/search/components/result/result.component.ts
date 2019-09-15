@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { HotelsService } from 'src/app/services/hotels.service';
+import { Hotel } from 'src/app/models/hotel';
 
 @Component({
   selector: 'app-result',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultComponent implements OnInit {
 
-  constructor() { }
+  hotels: any;
+
+  constructor(
+    private hotelsService: HotelsService
+  ) { }
 
   ngOnInit() {
+    this.hotelsService.hotelsSubject.subscribe(hotels => {
+      this.hotels = hotels;
+      console.log(this.hotels);
+    });
+    this.hotelsService.getHotels();
   }
 
 }
