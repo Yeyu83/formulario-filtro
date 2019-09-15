@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelsService } from 'src/app/services/hotels.service';
-import { hotels } from '../../../../data/hotels';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -10,12 +9,21 @@ import { Router } from '@angular/router';
 })
 export class FormComponent implements OnInit {
 
+  form: FormGroup;
+
   constructor(
     private hotelsService: HotelsService,
-    private router: Router
+    private formBuilder: FormBuilder
   ) { }
-
+  
   ngOnInit() {
+    this.form = this.formBuilder.group({
+      habitaciones: [''],
+      desayuno: ['']
+    });
+    this.form.valueChanges.subscribe(filters => {
+      this.hotelsService.getHotels(filters);
+    });
   }
 
 }

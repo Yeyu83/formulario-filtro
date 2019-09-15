@@ -18,7 +18,6 @@ export class ResultComponent implements OnInit {
   ngOnInit() {
     this.hotelsService.hotelsSubject.subscribe(hotels => {
       this.hotels = hotels;
-      console.log(this.hotels);
     });
     this.hotelsService.getHotels();
   }

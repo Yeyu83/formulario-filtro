@@ -5,36 +5,36 @@ export const hotels: Array<Hotel> = [
     nombre: 'AC Alicante',
     direccion: 'C/ Mayor',
     habitaciones: 3,
-    desayuno: true
+    desayuno: "si"
   },
   {
     nombre: 'AC Madrid',
     direccion: 'C/ Puertabonita, 47',
     habitaciones: 2,
-    desayuno: true,
+    desayuno: "no",
   },
   {
     nombre: 'Miramar',
     direccion: 'C/ Alpedrete, 101',
     habitaciones: 2,
-    desayuno: false
+    desayuno: "si"
   },
   {
     nombre: 'Meliá Zaragoza',
     direccion: 'C/ Mayor',
     habitaciones: 3,
-    desayuno: false
+    desayuno: "si"
   },
   {
     nombre: 'Hurtingo Palace',
     direccion: 'C/ Bella Vista del Mono, 45',
     habitaciones: 2,
-    desayuno: false
+    desayuno: "no"
   },
   {
     nombre: 'La Repolla en Verso Hotel',
     direccion: 'C/ La Polla de la Hostia, 10',
     habitaciones: 1,
-    desayuno: false
+    desayuno: "si"
   },
 ];
